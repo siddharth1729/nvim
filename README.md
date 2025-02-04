@@ -8,6 +8,10 @@ A modern, feature-rich Neovim setup powered by LazyVim, with enhanced Java devel
 Senior Software Engineer  
 [siddharthsabron.in](https://siddharthsabron.in)
 
+
+## Preview
+  ![prewiew](./img.png)
+
 ## ✨ Features
 
 - 🚀 Built on LazyVim for a solid foundation
