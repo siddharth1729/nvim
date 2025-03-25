@@ -8,7 +8,7 @@ return {
     main_image = "neovim",
     client_id = "793271441293967371",
     log_level = "debug",
-    debounce_timeout = 10,
+    debounce_timeout = 2,
     enable_line_number = false,
     blacklist = {},
     buttons = true,
@@ -26,4 +26,4 @@ return {
   config = function(_, opts)
     require("presence").setup(opts)
   end,
-} 
+}
