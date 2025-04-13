@@ -1,4 +1,4 @@
-# Neovim Configuration
+# A Simple Neovim Configuration
 
 A modern, feature-rich Neovim setup powered by LazyVim, with enhanced Java development support and beautiful transparency effects.
 
