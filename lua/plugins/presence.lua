@@ -15,7 +15,7 @@ return {
     show_time = true,
 
     -- Rich Presence text options
-    editing_text = "Editing %s",
+    editing_text = "Coding %s",
     file_explorer_text = "Browsing %s",
     git_commit_text = "Committing changes",
     plugin_manager_text = "Managing plugins",
