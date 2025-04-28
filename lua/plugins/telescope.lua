@@ -19,6 +19,7 @@ return {
     { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
     { "<leader>fc", "<cmd>Telescope commands<cr>", desc = "Commands" },
+    { "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Search in current buffer" },
   },
   opts = {
     defaults = {
