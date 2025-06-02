@@ -1,3 +1,5 @@
+![preview](./nvim_preview.png)
+
 # A Simple Neovim Configuration
 
 A modern, feature-rich Neovim setup powered by LazyVim, with enhanced Java development support and beautiful transparency effects.
@@ -8,8 +10,6 @@ A modern, feature-rich Neovim setup powered by LazyVim, with enhanced Java devel
 Senior Software Engineer  
 [siddharthsabron.in](https://siddharthsabron.in)
 
-## 🎨 Preview
-![preview](./nvim_preview.png)
 
 ## 🚀 Features
 
