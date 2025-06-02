@@ -9,7 +9,7 @@ Senior Software Engineer
 [siddharthsabron.in](https://siddharthsabron.in)
 
 ## 🎨 Preview
-![preview](./preview.png)
+![preview](./nvim_preview.png)
 
 ## 🚀 Features
 
