@@ -1,4 +1,4 @@
-![preview](./newimg.png)
+![preview](./newimg.jpeg)
 
 # A Simple Neovim Configuration
 
