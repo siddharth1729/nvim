@@ -10,3 +10,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   end,
 })
+
+vim.keymap.set("n", "<leader>lc", ":Leet<cr>", { desc = "Open LeetCode Panel" })

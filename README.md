@@ -118,6 +118,24 @@ Control transparency with these commands:
 - `:TransparentDisable` - Disable transparency
 - `:TransparentToggle` - Toggle transparency
 
+## 🤖 Gemini CLI Integration
+
+This Neovim configuration now includes integration with the Gemini CLI, powered by the `gemini.nvim` plugin. This allows you to interact with the Gemini AI directly from your Neovim editor for tasks like code completion, explanation, unit test generation, and more.
+
+### Features
+
+- **AI Chat:** Engage in conversations with the Gemini model.
+- **Code Assistance:** Get help with code completion, explanations, and reviews.
+- **Unit Test Generation:** Automatically generate unit tests for your code.
+
+### Usage
+
+To open the Gemini chat window, use the following keybinding:
+
+- `<leader>gc`: Toggles the Gemini chat window.
+
+**Note:** You need to set your `GEMINI_API_KEY` as an environment variable for the plugin to function correctly. Refer to the `gemini.nvim` documentation for more advanced usage and configuration options.
+
 ## 📝 License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
