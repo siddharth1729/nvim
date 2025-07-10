@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- Enable window transparency
-vim.opt.winblend = 20
+vim.opt.winblend = 5
 vim.opt.pumblend = 20
 
 -- Enable terminal transparency

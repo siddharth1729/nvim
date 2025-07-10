@@ -12,3 +12,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.keymap.set("n", "<leader>lc", ":Leet<cr>", { desc = "Open LeetCode Panel" })
+vim.keymap.set("n", "<leader>lr", ":Leet run<cr>", { desc = "Run LeetCode Solution" })
+vim.keymap.set("n", "<leader>ls", ":Leet submit<cr>", { desc = "Submit LeetCode Solution" })
