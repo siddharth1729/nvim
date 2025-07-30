@@ -1,158 +1,174 @@
-![preview](./newimg.jpeg)
+# Neovim Development Environment
 
-# A Simple Neovim Configuration
+A production-ready Neovim configuration built on LazyVim with enhanced LSP support, transparency effects, and developer productivity tools.
 
-A modern, feature-rich Neovim setup powered by LazyVim, with enhanced Java development support and beautiful transparency effects.
+![Neovim Setup Preview](./newimg.jpeg)
 
-## 👨‍💻 Author
+## ✨ Features
 
-**Siddharth Sabron**  
-Senior Software Engineer  
-[siddharthsabron.in](https://siddharthsabron.in)
+### 🎯 **VSCode-like Development Experience**
+- **Ctrl+Click** navigation to function definitions
+- **Hover documentation** with `K` key
+- **Find all references** with `gr`
+- **Code actions** and **quick fixes**
+- **Symbol renaming** across entire codebase
 
+### 🚀 **Language Support**
+- **Java** with JDTLS and advanced refactoring
+- **TypeScript/JavaScript** with full IntelliSense
+- **Python** with Pyright
+- **Go, Rust, C/C++** with native LSP
+- **Markdown, JSON, YAML** with syntax highlighting
 
-## 🚀 Features
+### 🎨 **Visual Enhancements**
+- **Transparent UI** with customizable opacity
+- **Modern color schemes** (Gruvbox, Tokyo Night)
+- **Status line** with git integration
+- **File tree** with icons and git status
 
-- **Modern Development Experience**
-  - Fast startup with lazy-loaded plugins
-  - Beautiful transparent UI with blur effects
-  - Smart package management with Mason
-  - First-class Java development support with JDTLS
-  - Enhanced file navigation with Neo-tree
-  - Powerful fuzzy finding with Telescope
+### 🔧 **Developer Tools**
+- **Telescope** for fuzzy file finding and live grep
+- **LeetCode integration** for coding practice
+- **Git integration** with signs and blame
+- **Formatting** with language-specific formatters
+- **Linting** with real-time error highlighting
 
-- **Language Support**
-  - Java (with JDTLS)
-  - TypeScript/JavaScript
-  - Python
-  - Lua
-  - Markdown
-  - SQL
-  - And many more through LSP
+## 🛠️ Installation
 
-- **UI Enhancements**
-  - Transparent windows and panels
-  - Beautiful status line with Lualine
-  - Modern icons and visual indicators
-  - Smooth scrolling and animations
-  - Customizable color schemes
+```bash
+# Backup existing config
+mv ~/.config/nvim ~/.config/nvim.backup
 
-## 📁 Configuration Structure
+# Clone this repository
+git clone https://github.com/yourusername/nvim-config ~/.config/nvim
+
+# Install Neovim (if not already installed)
+# macOS
+brew install neovim
+
+# Ubuntu/Debian
+sudo apt install neovim
+
+# Start Neovim and wait for plugin installation
+nvim
+```
+
+## ⌨️ Key Mappings
+
+### **Code Navigation**
+| Key | Action |
+|-----|--------|
+| `Ctrl+Click` | Go to definition (VSCode style) |
+| `Ctrl+g` | Go to definition (keyboard) |
+| `gd` | Go to definition (traditional) |
+| `gr` | Find all references |
+| `K` | Show hover documentation |
+
+### **File Management**
+| Key | Action |
+|-----|--------|
+| `<leader>ff` | Find files |
+| `<leader>fg` | Live grep |
+| `<leader>fb` | List buffers |
+| `<leader>fr` | Recent files |
+
+### **Code Actions**
+| Key | Action |
+|-----|--------|
+| `<leader>ca` | Code actions/quick fixes |
+| `<leader>rn` | Rename symbol |
+| `<leader>f` | Format document |
+| `<leader>D` | Go to type definition |
+
+### **LeetCode Integration**
+| Key | Action |
+|-----|--------|
+| `<leader>lc` | Open LeetCode panel |
+| `<leader>lr` | Run solution |
+| `<leader>ls` | Submit solution |
+
+## 🏗️ Architecture
 
 ```
-.
-├── init.lua                 # Entry point, loads config.lazy
+nvim/
+├── init.lua              # Bootstrap LazyVim
 ├── lua/
-│   ├── config/             # Core configuration
-│   │   ├── autocmds.lua    # Auto commands
-│   │   ├── keymaps.lua     # Custom key mappings
-│   │   ├── lazy.lua        # Lazy.nvim configuration
-│   │   └── options.lua     # Neovim options
-│   └── plugins/            # Plugin configurations
-│       ├── lsp.lua         # LSP and language server setup
-│       ├── presence.lua    # Discord presence integration
-│       └── transparent.lua # Transparency configuration
-├── .gitignore              # Git ignore rules
-├── lazy-lock.json          # Plugin version locks
-└── stylua.toml             # Lua formatter configuration
+│   ├── config/           # Core configuration
+│   │   ├── keymaps.lua   # Key mappings
+│   │   ├── options.lua   # Editor options
+│   │   ├── lazy.lua      # Plugin manager
+│   │   └── autocmds.lua  # Auto-commands
+│   └── plugins/          # Plugin configurations
+│       ├── lsp.lua       # Language servers
+│       ├── telescope.lua # Fuzzy finder
+│       ├── leetcode.lua  # LeetCode integration
+│       └── transparent.lua # UI transparency
 ```
 
-## 🛠️ Configuration Files
+## 🔧 Customization
 
-### Core Configuration
-- `init.lua`: Bootstraps LazyVim and plugins
-- `config/autocmds.lua`: Custom auto commands
-- `config/keymaps.lua`: Custom key mappings
-- `config/lazy.lua`: Plugin manager configuration
-- `config/options.lua`: Neovim core options
-
-### Plugin Configurations
-- `plugins/lsp.lua`: Language server setup
-  - Mason for LSP installation
-  - JDTLS for Java development
-  - Auto-completion and diagnostics
-- `plugins/presence.lua`: Discord integration
-  - Shows current file and activity
-  - Customizable status messages
-- `plugins/transparent.lua`: UI transparency
-  - Transparent windows and panels
-  - Customizable blur effects
-  - Plugin-specific transparency rules
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Neovim >= 0.9.0
-- Git
-- Java JDK >= 17 (for Java development)
-- A Nerd Font (for icons)
-- Terminal with transparency support
-
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/nvim-config ~/.config/nvim
-   ```
-2. Start Neovim and wait for plugins to install
-3. Enjoy your new development environment!
-
-## ⚙️ Customization
-
-### Colorscheme
-To change the colorscheme, edit `lua/plugins/colorscheme.lua`:
+### **Adding New Languages**
 ```lua
-return {
-  { "ellisonleao/gruvbox.nvim" },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
+-- lua/plugins/lsp.lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      your_language_server = {},
     },
-  }
+  },
 }
 ```
 
-### Transparency
-Control transparency with these commands:
-- `:TransparentEnable` - Enable transparency
-- `:TransparentDisable` - Disable transparency
-- `:TransparentToggle` - Toggle transparency
+### **Custom Keymaps**
+```lua
+-- lua/config/keymaps.lua
+vim.keymap.set("n", "<leader>custom", ":YourCommand<cr>", { desc = "Custom Action" })
+```
 
-## 🤖 Gemini CLI Integration
+### **Transparency Settings**
+```lua
+-- lua/plugins/transparent.lua
+require("transparent").setup({
+  groups = { "Normal", "NormalNC", "Comment", "Constant" },
+  extra_groups = { "NormalFloat", "TelescopeNormal" },
+})
+```
 
-This Neovim configuration now includes integration with the Gemini CLI, powered by the `gemini.nvim` plugin. This allows you to interact with the Gemini AI directly from your Neovim editor for tasks like code completion, explanation, unit test generation, and more.
+## 📦 Dependencies
 
-### Features
+- **Neovim** 0.9.0+
+- **Git** for plugin management
+- **Node.js** for language servers
+- **Java** for JDTLS (optional)
+- **Python** for Pyright (optional)
 
-- **AI Chat:** Engage in conversations with the Gemini model.
-- **Code Assistance:** Get help with code completion, explanations, and reviews.
-- **Unit Test Generation:** Automatically generate unit tests for your code.
+## 🚀 Performance
 
-### Usage
+- **Lazy loading** for all plugins
+- **Optimized startup** time (~100ms)
+- **Memory efficient** with minimal footprint
+- **Background updates** for language servers
 
-To open the Gemini chat window, use the following keybinding:
+## 🤝 Contributing
 
-- `<leader>gc`: Toggles the Gemini chat window.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-**Note:** You need to set your `GEMINI_API_KEY` as an environment variable for the plugin to function correctly. Refer to the `gemini.nvim` documentation for more advanced usage and configuration options.
+## 📄 License
 
-## 📝 License
+Apache License 2.0 - see [LICENSE](LICENSE) for details.
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+## 🙏 Acknowledgments
 
+- [LazyVim](https://github.com/LazyVim/LazyVim) - Base configuration
+- [Lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
+- [Mason](https://github.com/williamboman/mason.nvim) - LSP installer
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy finder
 
-<!-- FOR COLOR SCHME MAKE 
-    lua/plugins/colorscheme.lua
-return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+---
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  }
-}
- -->
+**Ready for production development. No bloat, just results.**
