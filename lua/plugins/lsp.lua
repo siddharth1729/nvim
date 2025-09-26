@@ -1,7 +1,7 @@
 return {
   -- Mason Configuration
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
@@ -18,7 +18,9 @@ return {
 
   -- Mason-LSPConfig Configuration
   {
-    "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
+    "mason-org/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
       automatic_installation = true,
     },
@@ -40,7 +42,7 @@ return {
         end,
       },
     },
-    config = function()
+    config = function(_, opts)
       -- Add keybindings for LSP features
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),

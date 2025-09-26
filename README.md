@@ -166,7 +166,7 @@ Apache License 2.0 - see [LICENSE](LICENSE) for details.
 
 - [LazyVim](https://github.com/LazyVim/LazyVim) - Base configuration
 - [Lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
-- [Mason](https://github.com/williamboman/mason.nvim) - LSP installer
+- [Mason](https://github.com/mason-org/mason.nvim) - LSP installer
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy finder
 
 ---

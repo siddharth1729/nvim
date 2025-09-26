@@ -7,7 +7,7 @@ return {
     neovim_image_text = "The One True Text Editor",
     main_image = "neovim",
     client_id = "793271441293967371",
-    log_level = "debug",
+    log_level = "info",
     debounce_timeout = 2,
     enable_line_number = false,
     blacklist = {},

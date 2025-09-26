@@ -1,6 +1,6 @@
 return {
   "xiyaowong/transparent.nvim",
-  lazy = false, -- Important: Don't lazy load this plugin
+  event = "VeryLazy", -- Lazy load for better performance
   config = function()
     require("transparent").setup({
       groups = { -- table: default groups
