@@ -18,7 +18,6 @@ return {
 
   -- Mason-LSPConfig Configuration
   {
-    "williamboman/mason.nvim",
     "mason-org/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
