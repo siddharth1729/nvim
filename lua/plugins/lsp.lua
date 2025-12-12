@@ -19,8 +19,10 @@ return {
   -- Mason-LSPConfig Configuration
   {
     "mason-org/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
+      ensure_installed = {
+        "jdtls",
+      },
       automatic_installation = true,
     },
   },
