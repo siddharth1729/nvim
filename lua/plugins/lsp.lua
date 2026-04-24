@@ -28,6 +28,8 @@ return {
   },
 
   -- LSP Configuration
+  -- NOTE: Keymaps for LSP live in `lua/config/keymaps.lua` as the single source of truth.
+  -- Do not re-register an `LspAttach` autocmd here — it causes augroup collisions.
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -43,20 +45,6 @@ return {
         end,
       },
     },
-    config = function(_, opts)
-      -- Add keybindings for LSP features
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-        callback = function(ev)
-          local opts = { buffer = ev.buf }
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        end,
-      })
-    end,
   },
 
   -- JDTLS Configuration
@@ -82,7 +70,10 @@ return {
           "-Declipse.product=org.eclipse.jdt.ls.core.product",
           "-Dlog.protocol=true",
           "-Dlog.level=ALL",
-          "-Xmx1g",
+          "-Xmx4g",
+          "-Xms512m",
+          "-XX:+UseG1GC",
+          "-XX:+UseStringDeduplication",
           "--add-modules=ALL-SYSTEM",
           "--add-opens", "java.base/java.util=ALL-UNNAMED",
           "--add-opens", "java.base/java.lang=ALL-UNNAMED",

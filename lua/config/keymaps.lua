@@ -8,7 +8,7 @@
 -- These keymaps provide VSCode-like functionality for code navigation and editing
 -- They are automatically loaded when a language server attaches to a buffer
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
   callback = function(ev)
     local opts = { buffer = ev.buf }
     
